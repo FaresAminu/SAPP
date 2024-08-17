@@ -1,0 +1,15 @@
+Package: SAPP
+Type: Package
+Title: Sector-Adjusted Point Projection for Visualization of Feature Influence
+Version: 0.1.0
+Author: FARES Mohamed Amine
+Maintainer: [FARES Mohamed Amine] <m.fares@univ-soukahras.dz>
+Description: The Sector-Adjusted Point Projection (SAPP) package provides tools
+for visualizing the influence of features in a dataset. It allows users to
+project data points into a circular plot where each sector corresponds to a
+feature's importance, and the points are adjusted based on the most influential 
+feature. The package can be used for model interpretability, feature analysis, 
+and visualization in machine learning and data science contexts.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
