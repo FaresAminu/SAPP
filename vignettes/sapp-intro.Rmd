@@ -1,0 +1,67 @@
+---
+title: "Introduction to SAPP"
+author: "Mohamed Amine FARES"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to SAPP}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 6,
+  fig.height = 4
+)
+```
+
+## Overview
+SAPP (Sector-Adjusted Points Plot) is an R package that visualizes feature dominance in a two-dimensional space. It combines PCA for dimensionality reduction with a novel sector-adjustment mechanism to show which features drive predictions for which observations.
+
+## Quick Start
+Load the package and prepare your data:
+
+```{r}
+library(SAPP)
+data(iris)
+X <- iris[, 1:4]
+```
+
+Fit a linear model and compute importances:
+
+```{r}
+model <- lm(Petal.Width ~ Sepal.Length + Sepal.Width + Petal.Length, data = iris)
+imp <- abs(coef(model)[-1])
+names(imp) <- c("Sepal.Length", "Sepal.Width", "Petal.Length")
+```
+
+Compute per-observation influence and plot:
+
+```{r}
+inf <- influence_feature(X, model)
+plot_sapp(X, imp, inf, alpha = "auto")
+```
+
+## Interpretation
+* **Colors:** The feature that most influenced each observation.
+* **Point size:** How strongly that feature dominated.
+* **Black markers:** Sector centers, based on global importances.
+* **Contours:** Where each feature tends to dominate.
+
+## Advanced Usage: Random Forest
+SAPP supports tree-based models via SHAP values (requires fastshap):
+
+```{r eval=FALSE}
+library(randomForest)
+rf <- randomForest(Species ~ ., data = iris, importance = TRUE)
+imp_rf <- importance(rf)[, "MeanDecreaseGini"]
+names(imp_rf) <- colnames(X)
+inf_rf <- influence_feature(X, rf)
+plot_sapp(X, imp_rf, inf_rf, alpha = "auto")
+```
+
+## References
+Lundberg, S. M., and Lee, S.-I. (2017). A Unified Approach to Interpreting Model Predictions. NIPS.
