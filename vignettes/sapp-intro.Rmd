@@ -25,7 +25,7 @@ SAPP (Sector-Adjusted Points Plot) is an R package that visualizes feature domin
 Load the package and prepare your data:
 
 ```{r}
-library(SAPP)
+library(sappviz)
 data(iris)
 X <- iris[, 1:4]
 ```

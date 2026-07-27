@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(SAPP)
+library(sappviz)
 
-test_check("SAPP")
+test_check("sappviz")

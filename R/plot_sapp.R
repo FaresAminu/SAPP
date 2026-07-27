@@ -16,7 +16,7 @@ utils::globalVariables(c("x", "y", "size", "feature"))
 #' @importFrom ggrepel geom_text_repel
 #' @examples
 #' \donttest{
-#' library(SAPP)
+#' library(sappviz)
 #' data(iris)
 #' X <- iris[, 1:4]
 #' model <- lm(Petal.Width ~ Sepal.Length + Sepal.Width + Petal.Length, data = iris)

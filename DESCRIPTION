@@ -1,4 +1,4 @@
-Package: SAPP
+Package: sappviz
 Title: Sector-Adjusted Points Plot for Feature Dominance
 Version: 1.0.11
 Authors@R: 
@@ -10,8 +10,8 @@ Description: Visualizes feature influence by projecting data into 2D
     importances. Supports linear models and tree-based models via 
     SHAP. Includes adaptive blending and margin-of-dominance encoding.
 License: MIT + file LICENSE
-URL: https://github.com/FaresAminu/SAPP
-BugReports: https://github.com/FaresAminu/SAPP/issues
+URL: https://github.com/FaresAminu/sappviz
+BugReports: https://github.com/FaresAminu/sappviz/issues
 Imports: 
     ggplot2 (>= 3.4.0),
     ggrepel (>= 0.9.0),
