@@ -1,6 +1,6 @@
 Package: sappviz
 Title: Sector-Adjusted Points Plot for Feature Dominance
-Version: 1.0.11
+Version: 1.0.12
 Authors@R: 
     person("Mohamed Amine", "FARES", 
            email = "fares.mohamedamin@esas-eloued.dz",
@@ -8,7 +8,10 @@ Authors@R:
 Description: Visualizes feature influence by projecting data into 2D 
     via PCA and adjusting points toward sector centers weighted by 
     importances. Supports linear models and tree-based models via 
-    SHAP. Includes adaptive blending and margin-of-dominance encoding.
+    SHAP. Includes adaptive blending and margin-of-dominance encoding. 
+    The underlying methodology is described in Fares, M. A. (2026). 
+    SAPP: Sector-Adjusted Points Plot (version 1.0.11). 
+    URL: https://github.com/FaresAminu/sappviz. 
 License: MIT + file LICENSE
 URL: https://github.com/FaresAminu/sappviz
 BugReports: https://github.com/FaresAminu/sappviz/issues
@@ -23,6 +26,7 @@ Suggests:
     randomForest,
     fastshap,
     MASS
+Additional_repositories: https://CRAN.R-project.org
 Encoding: UTF-8
 RoxygenNote: 7.3.3
 VignetteBuilder: knitr
