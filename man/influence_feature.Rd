@@ -9,7 +9,7 @@ influence_feature(data, model, scale_data = TRUE)
 \arguments{
 \item{data}{Data frame of features.}
 
-\item{model}{A fitted model (lm, glm, randomForest, ranger).}
+\item{model}{A fitted model (\code{lm}, \code{glm}, \code{randomForest}, \code{ranger}).}
 
 \item{scale_data}{Boolean. If TRUE, scales data for lm to match PCA (default: TRUE).}
 }
